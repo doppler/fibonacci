@@ -6,6 +6,7 @@
     position: absolute;
     top: 0;
     left: 0;
+    width: 100vw;
     label {
       font-size: small;
     }
@@ -15,20 +16,19 @@
       appearance: none;
       border: 0px;
     }
-  }
-  a {
-    position: absolute;
-    bottom: 1em;
-    right: 1em;
-    text-decoration: none;
-    color: white;
-    font-size: small;
-    font-weight: bold;
-    border: 1px solid white;
-    border-radius: 0.25em;
-    padding: 0.25em 0.5em 0.25em 0.5em;
-  }
-  a:hover {
-    color: yellow;
+    a {
+      position: absolute;
+      right: 1em;
+      text-decoration: none;
+      color: white;
+      font-size: small;
+      font-weight: bold;
+      border: 1px solid white;
+      border-radius: 0.25em;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    a:hover {
+      color: yellow;
+    }
   }
 }
