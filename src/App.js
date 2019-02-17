@@ -3,36 +3,37 @@ import fib from "./fib";
 import "./App.scss";
 
 const App = () => {
+  const numSpokes = 15;
   return (
     <div id="App">
-      <SquareFlower />
+      <svg width={"100vmin"} height={"100vmin"}>
+        {Array.from({ length: numSpokes }).map((_, i) => (
+          <Spoke
+            style={{
+              transform: `translate(50vmin, 50vmin) rotate(${(360 / numSpokes) *
+                (i + 1)}deg)`
+            }}
+          />
+        ))}
+      </svg>
     </div>
   );
 };
 
-const SquareFlower = ({ style }) => (
-  <svg width={"100vmin"} height={"100vmin"} style={style}>
-    {Array.from({ length: 8 }).map((_, i) => (
-      <Spoke
-        style={{
-          transform: `translate(50vmin, 50vmin) rotate(${(360 / 8) *
-            (i + 1)}deg)`
-        }}
-      />
-    ))}
-  </svg>
-);
-
 const Spoke = ({ style }) => {
-  const sequence = fib(10);
+  const sequence = fib(12);
   console.log({ sequence });
-  return sequence.map((n, i) => (
+  return sequence.slice(0, sequence.length - 2).map((n, i) => (
     <g style={style}>
       <rect
-        x={`${sequence[i - 1]}`}
-        y={`${sequence[i - 1]}`}
-        width={n}
-        height={n}
+        x={`calc((50vmin / ${sequence[sequence.length - 1]}) * ${
+          sequence[i - 1]
+        })`}
+        y={`calc((50vmin / ${sequence[sequence.length - 1]}) * ${
+          sequence[i - 1]
+        })`}
+        width={`calc((50vmin / ${sequence[sequence.length - 1]}) * ${n})`}
+        height={`calc((50vmin / ${sequence[sequence.length - 1]}) * ${n})`}
         style={{
           fill: `hsla(${n}, 100%, 50%, 0.1)`,
           stroke: `hsla(${n}, 100%, 50%, 1)`
