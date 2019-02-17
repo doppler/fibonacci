@@ -41,6 +41,13 @@ const App = () => {
           onChange={changeFibValue}
         />
       </div>
+      <a
+        href="https://github.com/doppler/fibonacci/blob/master/src/App.js"
+        target="_blank"
+        rel="noopener"
+      >
+        View Source
+      </a>
     </div>
   );
 };
