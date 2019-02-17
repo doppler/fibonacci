@@ -10,7 +10,7 @@ const App = () => {
   const changeNumSpokes = event => setNumSpokes(Number(event.target.value));
   const changeFibValue = event => setFibValue(Number(event.target.value));
 
-  const changeBaseHue = () => setBaseHue(baseHue === 3659 ? 0 : baseHue + 1);
+  const changeBaseHue = () => setBaseHue(baseHue === 3599 ? 0 : baseHue + 1);
 
   useEffect(() => {
     requestAnimationFrame(changeBaseHue);
