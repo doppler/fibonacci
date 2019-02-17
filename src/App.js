@@ -25,23 +25,22 @@ const App = () => {
 const Spoke = ({ style, fibValue }) => {
   const sequence = fib(fibValue);
   console.log({ sequence });
-  return sequence.slice(0, sequence.length - 2).map((n, i) => (
-    <g style={style}>
-      <rect
-        x={`calc((50vmin / ${sequence[sequence.length - 1]}) * ${
-          sequence[i - 1]
-        })`}
-        y={`calc((50vmin / ${sequence[sequence.length - 1]}) * ${
-          sequence[i - 1]
-        })`}
-        width={`calc((50vmin / ${sequence[sequence.length - 1]}) * ${n})`}
-        height={`calc((50vmin / ${sequence[sequence.length - 1]}) * ${n})`}
-        style={{
-          fill: `hsla(${n}, 100%, 50%, 0.1)`,
-          stroke: `hsla(${n}, 100%, 50%, 1)`
-        }}
-      />
-    </g>
-  ));
+  return sequence.slice(0, sequence.length - 2).map((n, i) => {
+    const last = sequence[sequence.length - 1];
+    return (
+      <g style={style}>
+        <rect
+          x={`calc((50vmin / ${last}) * ${sequence[i - 1]})`}
+          y={`calc((50vmin / ${last}) * ${sequence[i - 1]})`}
+          width={`calc((50vmin / ${last}) * ${n})`}
+          height={`calc((50vmin / ${last}) * ${n})`}
+          style={{
+            fill: `hsla(${n}, 100%, 50%, 0.1)`,
+            stroke: `hsla(${n}, 100%, 50%, 1)`
+          }}
+        />
+      </g>
+    );
+  });
 };
 export default App;
