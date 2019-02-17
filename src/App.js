@@ -10,14 +10,18 @@ const App = () => {
   const changeNumSpokes = event => setNumSpokes(Number(event.target.value));
   const changeFibValue = event => setFibValue(Number(event.target.value));
 
-  const changeBaseHue = () => setBaseHue(baseHue === 359 ? 0 : baseHue + 1);
+  const changeBaseHue = () => setBaseHue(baseHue === 3659 ? 0 : baseHue + 1);
 
   useEffect(() => {
     requestAnimationFrame(changeBaseHue);
   }, [baseHue]);
   return (
     <div id="App">
-      <svg width={"100vmin"} height={"100vmin"}>
+      <svg
+        width={"100vmin"}
+        height={"100vmin"}
+        style={{ transform: `rotate(${baseHue / 10}deg)` }}
+      >
         {Array.from({ length: numSpokes }).map((_, i) => (
           <Spoke
             key={i}
