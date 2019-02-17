@@ -1,0 +1,13 @@
+{
+  "main.css": "/fibonacci/static/css/main.b1f70c15.chunk.css",
+  "main.js": "/fibonacci/static/js/main.10f573ff.chunk.js",
+  "main.js.map": "/fibonacci/static/js/main.10f573ff.chunk.js.map",
+  "runtime~main.js": "/fibonacci/static/js/runtime~main.dfe936a3.js",
+  "runtime~main.js.map": "/fibonacci/static/js/runtime~main.dfe936a3.js.map",
+  "static/js/2.51fda976.chunk.js": "/fibonacci/static/js/2.51fda976.chunk.js",
+  "static/js/2.51fda976.chunk.js.map": "/fibonacci/static/js/2.51fda976.chunk.js.map",
+  "index.html": "/fibonacci/index.html",
+  "precache-manifest.ef4d3783a1f072470d55b00fdc4700ab.js": "/fibonacci/precache-manifest.ef4d3783a1f072470d55b00fdc4700ab.js",
+  "service-worker.js": "/fibonacci/service-worker.js",
+  "static/css/main.b1f70c15.chunk.css.map": "/fibonacci/static/css/main.b1f70c15.chunk.css.map"
+}
