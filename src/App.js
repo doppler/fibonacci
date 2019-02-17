@@ -5,38 +5,40 @@ import "./App.scss";
 const App = () => {
   return (
     <div id="App">
-      <Quadrant style={{ transform: `rotate(${180}deg)` }} />
-      <Quadrant style={{ transform: `rotate(${-90}deg)` }} />
-      <Quadrant style={{ transform: `rotate(${90}deg)` }} />
-      <Quadrant />
+      <SquareFlower />
     </div>
   );
 };
 
-const Quadrant = ({ style }) => (
-  <svg width={377} height={377} style={style}>
-    <Squares />
-    <Squares style={{ transform: `rotate(${45}deg)` }} />
-    <Squares style={{ transform: `rotate(${-45}deg)` }} />
-    <Squares style={{ transform: `rotate(${22.5}deg)` }} />
-    <Squares style={{ transform: `rotate(${-22.5}deg)` }} />
+const SquareFlower = ({ style }) => (
+  <svg width={"100vmin"} height={"100vmin"} style={style}>
+    {Array.from({ length: 8 }).map((_, i) => (
+      <Spoke
+        style={{
+          transform: `translate(50vmin, 50vmin) rotate(${(360 / 8) *
+            (i + 1)}deg)`
+        }}
+      />
+    ))}
   </svg>
 );
-const Squares = ({ style }) => {
+
+const Spoke = ({ style }) => {
   const sequence = fib(10);
   console.log({ sequence });
   return sequence.map((n, i) => (
-    <rect
-      x={sequence[i - 1]}
-      y={sequence[i - 1]}
-      width={n}
-      height={n}
-      style={{
-        ...style,
-        fill: `hsla(${n}, 100%, 50%, 0.1)`,
-        stroke: `hsla(${n}, 100%, 50%, 1)`
-      }}
-    />
+    <g style={style}>
+      <rect
+        x={`${sequence[i - 1]}`}
+        y={`${sequence[i - 1]}`}
+        width={n}
+        height={n}
+        style={{
+          fill: `hsla(${n}, 100%, 50%, 0.1)`,
+          stroke: `hsla(${n}, 100%, 50%, 1)`
+        }}
+      />
+    </g>
   ));
 };
 export default App;
