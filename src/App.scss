@@ -2,4 +2,18 @@
   height: 100vh;
   background-color: #000008;
   color: white;
+  #controls {
+    position: absolute;
+    top: 0;
+    left: 0;
+    label {
+      font-size: small;
+    }
+    input {
+      background-color: black;
+      color: white;
+      appearance: none;
+      border: 0px;
+    }
+  }
 }

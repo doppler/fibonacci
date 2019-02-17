@@ -1,10 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import fib from "./fib";
 import "./App.scss";
 
 const App = () => {
-  const numSpokes = 10;
-  const fibValue = 12;
+  const [numSpokes, setNumSpokes] = useState(15);
+  const [fibValue, setFibValue] = useState(15);
+
+  const changeNumSpokes = event => setNumSpokes(Number(event.target.value));
+  const changeFibValue = event => setFibValue(Number(event.target.value));
   return (
     <div id="App">
       <svg width={"100vmin"} height={"100vmin"}>
@@ -18,6 +21,26 @@ const App = () => {
           />
         ))}
       </svg>
+      <div id="controls">
+        <label htmlFor="num-spokes">Spokes: </label>
+        <input
+          id="num-spokes"
+          type="number"
+          value={numSpokes}
+          min={1}
+          max={42}
+          onChange={changeNumSpokes}
+        />
+        <label htmlFor="fib-number">Iterations: </label>
+        <input
+          id="fib-number"
+          type="number"
+          value={fibValue}
+          min={2}
+          max={36}
+          onChange={changeFibValue}
+        />
+      </div>
     </div>
   );
 };
@@ -35,7 +58,7 @@ const Spoke = ({ style, fibValue }) => {
           width={`calc((50vmin / ${last}) * ${n})`}
           height={`calc((50vmin / ${last}) * ${n})`}
           style={{
-            fill: `hsla(${n}, 100%, 50%, 0.1)`,
+            fill: `hsla(${n}, 100%, 50%, 0.05)`,
             stroke: `hsla(${n}, 100%, 50%, 1)`
           }}
         />
