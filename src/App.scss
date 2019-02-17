@@ -2,6 +2,11 @@
   height: 100vh;
   background-color: #000008;
   color: white;
+  overflow: hidden;
+  svg {
+    margin-top: calc(50vh - 100vmin / 2);
+    margin-left: calc(50vw - 100vmin / 2);
+  }
   #controls {
     position: absolute;
     top: 0;
