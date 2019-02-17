@@ -3,8 +3,8 @@ import fib from "./fib";
 import "./App.scss";
 
 const App = () => {
-  const [numSpokes, setNumSpokes] = useState(15);
-  const [fibValue, setFibValue] = useState(15);
+  const [numSpokes, setNumSpokes] = useState(30);
+  const [fibValue, setFibValue] = useState(11);
   const [baseHue, setBaseHue] = useState(0);
 
   const changeNumSpokes = event => setNumSpokes(Number(event.target.value));
