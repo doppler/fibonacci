@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/fibonacci/precache-manifest.dc8c6fec4ad1747ce178d222e69745aa.js"
+  "/fibonacci/precache-manifest.100b29b2d447ce0462755d90de0f7186.js"
 );
 
 workbox.clientsClaim();
